@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Add Home </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/add_home.css">
+    <link rel="stylesheet" href="css/fontAwesome.css"> 
+</head>
+<body> 
+<div class="row"> 
+  
+        <form id="msform">
+             
+            <ul id="progressbar">
+                <li class="active ">Elan ver</li>
+                <li> Əmlak haqqında məlumat </li>
+                <li> Əlaqə məlumatları </li>
+            </ul>  
+            <div class="info"><span class="req">*</span> <i> simvolu ilə verilən bütün sahələr doldurulmalıdır</i></div>
+            <fieldset>
+                
+                  <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label><span class="req">*</span> Elanın növü  :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12"> 
+                             <div class="select">
+                                  <select aria-label="Elanın növü " class="step1">
+                                    <option selected disabled> Hamısı</option> 
+                                    <option value="1">Aylıq kirayə</option>
+                                    <option value="2">Günlük  kirayə</option>
+                                    
+                                  </select>
+                            </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label><span class="req">*</span> Əmlakın Növü :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12"> 
+                                <div class="select" >
+                                  <select aria-label="Əmlakın Növü" id="building_type"  class="step1" onchange="show_floor()">
+                                    <option selected disabled> Hamısı</option> 
+                                    <option value="1">Bina ev mənzil</option>
+                                    <option value="2">Həyət evi</option>
+                                    <option value="3">Ofis</option>
+                                  </select>
+                                 </div>
+                      </div>
+                  </div>
+                   <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label> <span class="req">*</span> Əmlakın Tipi :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12"> 
+                                <div class="select">
+                                  <select aria-label="Əmlakın Növü" class="step1" >
+                                    <option selected disabled> Hamısı</option> 
+                                    <option value="1">Yeni tikili</option>
+                                    <option value="2">Köhnə tikili</option> 
+                                  </select>
+                                 </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label> <span class="req">*</span>  Şəhər :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12"> 
+                                <div class="select">
+                                    <select aria-label="Bütün şəhərlər" class="step1"  id="location_type" onchange="show_locationn()">
+                                        <option  disabled selected> Hamısı</option> 
+                                        <option value="1">Bakı</option>
+                                        <option value="2">Abşeron</option>
+                                        <option value="3">Ağdaş</option>
+                                        <option value="4">Ağsu</option>
+                                        <option value="5">Bərdə</option>
+                                        <option value="6">Gəncə</option>
+                                    </select>
+                            </div>
+                      </div>
+                  </div>
+                  <div id ="show_region">
+                      <div class="row">
+                          <div class="col-md-3 col-sm-6 col-xs-12"> 
+                                <label> <span class="req">*</span> Rayon :</label>
+                          </div>
+                          <div class="col-md-7 col-sm-6 col-xs-12"> 
+                                    <div class="select">
+                                        <select aria-label="Rayon" >
+                                            <option selected disabled> Bütün rayonlar</option> 
+                                            <option value="1">Binəqədi rayonu</option>
+                                            <option value="2">Yasamal rayonu</option>
+                                            <option value="3">Nizami rayonu</option>
+                                            <option value="4">Nəsimi rayonu</option>
+                                            <option value="5">Qaradağ rayonu</option>
+                                        </select>
+                                </div>
+                          </div>
+                      </div>  
+                  </div>
+                  <div id ="show_subway">
+                      <div class="row">
+                          <div class="col-md-3 col-sm-6 col-xs-12"> 
+                                <label><span class="req">*</span> Metro :</label>
+                          </div>
+                          <div class="col-md-7 col-sm-6 col-xs-12"> 
+                                    <div class="select">
+                                      <select aria-label="Metro">
+                                            <option selected disabled>  Bütün metrolar </option> 
+                                            <option value="1">Həzi Aslanov</option>
+                                            <option value="2">Əhmədli</option>
+                                            <option value="3">28 May</option>
+                                            <option value="4">Gənclik</option>
+                                            <option value="5">Sahil</option>
+                                      </select>
+                                </div>
+                          </div>
+
+                      </div>
+                  </div> 
+
+                  <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label><span class="req">*</span> Ünvan :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12"> 
+                            <textarea placeholder="Ünvanı daxil edin..." class="step1"></textarea>
+                      </div>
+                  </div> 
+                <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label> </label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12" style="text-align: right;"> 
+                             Elanı VIP Elanlar siyahısına əlavə et  <input type="radio" data-toggle="modal" id="anons" value="Qaz">
+                      </div>
+                  </div>  
+                    <input type="button" name="next" class="next ss action-button" value="İrəli"/>
+            </fieldset>
+            <fieldset> 
+                <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label><span class="req">*</span> Mərtəbə sayı :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12 price"> 
+                                 <input type="number" name="Mərtəbə sayı" class="step2" placeholder="Mərtəbə sayı"/> 
+                                 
+                      </div>
+                  </div>
+                  <div class="row" id="floor">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label><span class="req">*</span> Yerləşdiyi mərtəbə :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12 price">  
+                                 <input type="number" name="mərtəbə" placeholder="Yerləşdiyi mərtəbə "/> 
+                       </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label><span class="req">*</span> Otaq sayı :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12 price">  
+                          <input type="number" name="Otaq sayı" class="step2" placeholder="Otaq sayı"/>
+                      </div>
+                  </div>
+                <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label><span class="req">*</span> Qiyməti :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12 price"> 
+                                <input type="number" name="Qiymət" class="step2" placeholder="AZN"/>
+                      </div>
+                </div>
+                <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label><span class="req">*</span> Sahəsi (m<sup>2</sup> ilə) :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12 price"> 
+                                <input type="number" name="Sahe" class="step2" placeholder="0"/>
+                      </div>
+                </div>
+                 
+                <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label>Əmlak haqqında :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12"> 
+                                <textarea placeholder="Əmlak haqqında məlumat..."></textarea>
+                      </div>
+                </div>
+               
+                <div class="row">
+                     <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label> 
+                                   <a href="javascript:void(0)"  onclick="$('#pro-image').click()"> <i class="fa fa-image"></i> Şəkil əlavə et </a>
+                                    <input type="file" id="pro-image" name="pro-image" style="display: none;" accept="image/*" class="form-control" multiple>  
+                            </label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12"> 
+                                <div class="preview-images-zone" id='iii'>  </div>
+                      </div>
+                 </div>
+                <input type="button" name="Geri" class="previous action-button-previous" value='&laquo Geri' >
+                <input type="button" name="İrəli" class="next action-button" value="İrəli"/>
+            </fieldset>
+            <fieldset>
+               
+                 <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label><span class="req">*</span> Elan verən :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12"> 
+                            <div class="select">
+                                  <select aria-label="Elan verən" class="step3" >
+                                    <option selected disabled>  </option> 
+                                    <option value="2">Əmlak Sahibi</option>
+                                    <option value="2">Vasitəçi</option>
+                                  </select>
+                            </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label><span class="req">*</span> ADI :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12"> 
+                                <input type="text" name="adı" class="step3" placeholder="Adı..." autocomplete="" />
+ 
+                      </div>
+                  </div>
+                  <div class="row">
+                        <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label>Telefon :</label>
+                        </div>
+                        <div class="col-md-7 col-sm-6 col-xs-12"> 
+                            <div class="field-wrap" id="user_phone" >
+                                <div id='main_num' >
+                                    <div class="input-group my-group multiple-form-group"  >
+                                          <select   class="selectpicker form-control" disabled >
+                                                <option selected> +994</option>
+                                                <option value="1">+7</option>
+                                                <option value="2">+1</option>
+                                          </select>
+                                          <input type="tel" class="form-control f2"   value="51-234-55-22" disabled>
+                                          <span class="input-group-btn  add_btn">
+                                              <button type="button" class="btn btn-success btn-add">+</button>
+                                          </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                  </div> 
+                  <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label><span class="req">*</span> Email :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12"> 
+                                <input type="email" name="email" class="step3" placeholder="Email..." autocomplete="" />
+                      </div>
+                  </div>
+                   
+                  <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12"> 
+                            <label>Qeyd :</label>
+                      </div>
+                      <div class="col-md-7 col-sm-6 col-xs-12"> 
+                                <textarea placeholder="Əmlak haqqında qeydlər..."></textarea>
+                      </div>
+                </div>
+                <div class="row">
+                      <div class="col-md-3 col-sm-6 col-xs-12 "> 
+                              <label>Göstəricilər :</label>  
+                      </div>
+                      <div class="col-md-2 col-sm-6 col-xs-12 s">
+                              <input type="checkbox" id="water"  value="Su">
+                              <label for="water">Su</label>
+                              <input type="checkbox" id="wifi"  value="İnternet" >
+                              <label for="wifi">İnternet</label>
+                              <input type="checkbox" id="repair"  value="Təmirli" >
+                              <label for="repair">Təmirli</label>
+                              <input type="checkbox" id="qaz" value="Qaz">
+                              <label for="qaz">Qaz</label>
+
+                      </div>
+                       <div class="col-md-2 col-sm-6 col-xs-12 s"> 
+                            
+                              <input type="checkbox" id="light" value="İşıq">
+                              <label for="light">İşıq</label>
+                              <input type="checkbox" id="phone"  value="Telefon">
+                              <label for="phone">Telefon</label>
+                              <input type="checkbox" id="tv"   value="TV" >
+                              <label for="tv">TV</label>
+                              <input type="checkbox" id="lift" value="Lift">
+                              <label for="lift">Lift</label>
+                              
+                      </div>
+                      <div class="col-md-4 col-sm-6 col-xs-12 s"> 
+                            
+                              <input type="checkbox" id="kombi" value="Kombi">
+                              <label for="kombi">Kombi</label>
+                              <input type="checkbox" id="mis" value="Mərkəzi istilik sistemi">
+                              <label for="mis">Mərkəzi qızdırıcı sistemi</label>
+                              <input type="checkbox" id="air_con" value="Kondisioner" >
+                              <label for="air_con">Kondisioner</label>
+                              <input type="checkbox" id="pool"   value="Hovuz">
+                              <label for="pool">Hovuz</label>
+                             
+                      </div>
+                </div>
+                  
+                <input type="button" name="Geri" class="previous action-button-previous" value='&laquo Geri' > 
+                <input type="submit" name="submit" class="submit action-button" value="Təsdiq Et"/>
+            </fieldset>
+        </form>
+         
+    </div>
+</div> 
+ <div class="modal fade vip_modal" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Vip elan et</h4>
+        </div>
+        <div class="modal-body">
+          <p>ViP elan 10 dəfə çox baxılır və məhsul daha tez satılır !</p>
+                  <input type="checkbox" id="visa"   > 
+                        <label for="visa">VISA / MasterCard</label>
+                        <input type="checkbox" id="portmanat"   >
+                        <label for="portmanat"> Portmanat (kod və ya hesabla) <a href=""> kod necə alım?</a></label>
+                        <input type="checkbox" id="tel_num"   >
+                        <label for="tel_num"> Bakcell / Nar - sms ilə ödəniş </label>
+
+                <hr><br>
+                     <input type="checkbox" id="day"   > 
+                        <label for="day">10 AZN / 10 gün</label>
+                        <input type="checkbox" id="month"   >
+                        <label for="month"> 30 AZN / 30 gün </label>
+                 <br>
+                 <input type="button" name="" class="btn btn-info" value="Ödəmək"> 
+                
+              <p class ="anons_info"> Vip elan üstünlükləri:<br>
+            - Vip elan 10 dəfə çox baxılır və daha çox satılır.<br>
+            - Vip elan saytda Ana səhifə, Kateqoriyalarda, Axtarış zamanı 1ci yuxarda çıxır.<br>
+            - Vip Elan hər həftə irəli çəkilir avtomatik.    
+          </p>      
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+</body>
+    <script src="js/jquery.min.1.1.2.js" type="text/javascript"></script> 
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/add_home.js"></script>
+   </html>
